@@ -4,19 +4,19 @@
  * @type {Object}
  */
 export default {
-  type: 'mysql',
-  adapter: {
-    mysql: {
-      host: '127.0.0.1',
-      port: '',
-      database: '',
-      user: '',
-      password: '',
-      prefix: '',
-      encoding: 'utf8'
-    },
-    mongo: {
+    type: 'mysql',
+    adapter: {
+        mysql: {
+            host: '127.0.0.1',
+            port: '3306',
+            database: 'thinkjs',
+            user: 'root',
+            password: '',
+            prefix: 'fish',
+            encoding: 'utf8'
+        },
+        mongo: {
 
+        }
     }
-  }
 };

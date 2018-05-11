@@ -12,7 +12,7 @@ export default {
             database: 'thinkjs',
             user: 'root',
             password: '',
-            prefix: 'fish',
+            prefix: 'fish_',
             encoding: 'utf8'
         },
         mongo: {

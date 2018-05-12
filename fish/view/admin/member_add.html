@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%include ../common/common_header.html%>
+        <link rel="stylesheet" type="text/css" href="/static/css/plugins/webuploader/webuploader.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/demo/webuploader-demo.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <%include ../common/common_head.html%>
+            <%include ../common/common_opration/common_left.html%>
+                <div id="page-wrapper" class="gray-bg dashbard-1">
+
+                    <div class="row wrapper border-bottom white-bg page-heading">
+                        <div class="col-lg-10">
+                            <h2>fishUp</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/admin">主页</a>
+                                </li>
+                                <li>
+                                    <a>会员管理</a>
+                                </li>
+                                <li>
+                                    <strong>新增会员</strong>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-lg-2">
+
+                        </div>
+                    </div>
+                    <div class="wrapper wrapper-content  animated fadeInRight">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>新增会员 </h5>
+
+                                    </div>
+                                    <div class="ibox-content">
+                                        <form method="post" class="form-horizontal memberinfo" action="/admin/member/doadd">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">用户名*</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" name="username" class="form-control">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">密码*</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" name="password" id="password">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">确认密码*</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" name="repassword">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">性别*</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" checked='checked' value="1"  name="sex">男</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" value="2"  name="sex">女</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" value="0"  name="sex">保密</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">邮箱</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="email">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">手机</label>
+
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="phone">
+                                                    <span class="help-block m-b-none"></span>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">会员等级</label>
+
+                                                <div class="col-sm-10">
+                                                    <select class="form-control m-b" name="level">
+                                                        <option>铁牌会员</option>
+                                                        <option>铜牌会员</option>
+                                                        <option>银牌会员</option>
+                                                        <option>金牌会员</option>
+                                                        <option>钻石会员</option>
+                                                        <option>超级会员</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">会员头像</label>
+                                                <div id="uploader" class="wu-example">
+                                                    <div class="queueList">
+                                                        <div id="dndArea" class="placeholder">
+                                                            <div id="filePicker"></div>
+                                                            <p>将照片拖到这里</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="statusBar" style="display:none;">
+                                                        <div class="progress">
+                                                            <span class="text">0%</span>
+                                                            <span class="percentage"></span>
+                                                        </div>
+                                                        <div class="info"></div>
+                                                        <div class="btns">
+                                                            <div id="filePicker2"></div>
+                                                            <div class="uploadBtn">开始上传</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="headimg">
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <div class="col-sm-4 col-sm-offset-2">
+                                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                                    <button class="btn btn-white" type="submit">取消</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </div>
+    <%include ../common/common_footer.html%>
+
+        <!-- jQuery Validation plugin javascript-->
+        <script src="/static/js/plugins/validate/jquery.validate.min.js"></script>
+        <script src="/static/js/plugins/validate/messages_zh.min.js"></script>
+        <script src="/static/js/jquery-form.js"></script>
+        <script>
+            // 添加全局站点信息 
+            var BASE_URL = '/static/js/plugins/webuploader';
+            //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+            $.validator.setDefaults({
+                highlight: function(element) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                success: function(element) {
+                    element.closest('.form-group').removeClass('has-error').addClass('has-success');
+                },
+                errorElement: "span",
+                errorClass: "help-block m-b-none",
+                validClass: "help-block m-b-none"
+
+
+            });
+
+            //以下为官方示例
+            $().ready(function() {
+
+                // validate signup form on keyup and submit
+                $(".memberinfo").validate({
+                    rules: {
+                        firstname: "required",
+                        lastname: "required",
+                        username: {
+                            required: true,
+                            minlength: 2
+                        },
+                        password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        repassword: {
+                            required: true,
+                            minlength: 5,
+                            equalTo: "#password"
+                        },
+                        sex: {
+                            required: true,
+                        },
+                        email: {
+                            required: false,
+                            email: true
+                        },
+
+                    },
+                    messages: {
+                        username: {
+                            required: "请输入您的用户名",
+                            minlength: "用户名必须两个字符以上"
+                        },
+                        password: {
+                            required: "请输入您的密码",
+                            minlength: "密码必须5个字符以上"
+                        },
+                        repassword: {
+                            required: "请再次输入密码",
+                            minlength: "密码必须5个字符以上",
+                            equalTo: "两次输入的密码不一致"
+                        },
+                        email: "请输入您的E-mail",
+                        sex: "请选择性别"
+                    },
+                    submitHandler: function(form) {
+                        console.log(form);
+                        $(form).ajaxSubmit();
+                    }
+                });
+
+            });
+        </script>
+        <script src="/static/js/plugins/webuploader/webuploader.min.js"></script>
+
+        <script src="/static/js/demo/webuploader-demo.js"></script>
+</body>
+
+</html>
